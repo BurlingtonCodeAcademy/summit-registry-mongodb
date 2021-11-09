@@ -50,6 +50,8 @@ app.post("/scribble/:entryId", async (req, res) => {
   console.log(entryId);
 
   await Entries.deleteOne({ _id: entryId });
+
+  res.redirect("/")
 });
 
 app.post("/pencil-in/:entryId" , async (req, res) => {
@@ -80,7 +82,7 @@ app.post("/pencil-in/:entryId/update", async (req, res) => {
   if (req.body.msg) {
       updated.msg = req.body.msg
   }
-  
+
   await Entries.findByIdAndUpdate(
     { _id: entryId },
     { $set: { name: updated.name, date: updated.date, msg: updated.msg } }
