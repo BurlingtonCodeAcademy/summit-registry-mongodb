@@ -11,7 +11,7 @@ export default function App() {
   const onClick = () => {
     if (lookRegister === false) {
       setLookRegister(true);
-      setButtonText("Close the summity registry.");
+      setButtonText("Close the summit registry.");
     } else {
       setLookRegister(false);
       setButtonText("Open the summit registry.");

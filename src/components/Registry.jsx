@@ -46,12 +46,10 @@ export default function Peak(props) {
                       </td>
                     </tr>
                   </tbody>
-                </table>
-              </div>
-            );
-          })}
-        </div>
-        <form action="/write" method="POST">
+                  <tfoot>
+                    <tr>
+                      <td colspan = "4">
+                         <form action="/write" method="POST">
           <input type="text" name="name" placeholder="Who are you?" />
           <input type="text" name="date" placeholder="When were you here?" />
           <input
@@ -61,6 +59,15 @@ export default function Peak(props) {
           />
           <input type="submit" value="Write in the log" />
         </form>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            );
+          })}
+        </div>
+       
       </>
     );
   } else {

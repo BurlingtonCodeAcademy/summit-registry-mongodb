@@ -67,6 +67,7 @@ h1
 }
 table {
   width: 30vw;
+  display: inline;
 }
 
 td,
@@ -74,6 +75,7 @@ th {
 background-color: white;
   width: 30vw;
   border: 1px solid #999;
-  padding: 0.5rem;
-  text-align: center
+  padding: .5vw;
+  text-align: center;
+ 
 }
