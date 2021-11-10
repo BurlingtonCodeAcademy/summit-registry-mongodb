@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import '../styles/App.css'
 
 export default function Peak(props) {
   const [allEntries, setAllEntries] = useState([]);
@@ -23,9 +24,9 @@ export default function Peak(props) {
        
             return (
               <div key = {entry._id}>
-                <h1>{entry.name}</h1>
-                <h1>{entry.date}</h1>
-                <h1>{entry.msg}</h1>
+                <h2>{entry.name}</h2>
+                <h2>{entry.date}</h2>
+                <h2>{entry.msg}</h2>
                 <form action={`/scribble/${entry._id}`} method="POST">
                   <button>Scribble this out?</button>
                 </form>

@@ -12,9 +12,30 @@
     margin-top: 1.5rem;
   }
 
-  /* Set default on body for*/
+  /* Set body to fill the viewport even when empty; making the choice to prioritize beauty over loading speed because the text is minimal and what is present is important; adjusts line height for accessibility  */
 body {
     min-height: 100vh;
-    text-rendering: optimizeSpeed;
+    text-rendering: optimizeLegibility;
     line-height: 1.5;
   }
+
+  /* sets default on img for ease of styling */
+  img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+#layout {
+    display: flex;
+}
