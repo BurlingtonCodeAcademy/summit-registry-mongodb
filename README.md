@@ -1,7 +1,5 @@
 ## You will need to run NPM install to have all of the necessary dependencies for this project.
 
-### Send 'student' branch for students to clone down.
-
 ### Run-time: ~1 hour
 
 ### `node server.js` and `npm start` in top level of directory in two separate command lines
