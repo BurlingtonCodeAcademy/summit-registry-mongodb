@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from "react";
+
+//----necessary imports
+//importing hooks from React
+import { useState, useEffect } from "react";
 import "../styles/App.css";
 
+//---component function
 export default function Registry(props) {
+  //uses state to hold the result of the fetch
   const [allEntries, setAllEntries] = useState([]);
 
   useEffect(() => {
+    //fetches information from a local API route set up on the server
     fetch("http://localhost:5000/allentries")
       .then((res) => {
         return res.json();
@@ -14,6 +20,7 @@ export default function Registry(props) {
       });
   }, []);
 
+//conditionally renders the component dependant on the boolean of "lookRegistry" state attached to the "control-registry" button
   if (props.lookRegistry === true) {
     return (
       <>
@@ -29,6 +36,7 @@ export default function Registry(props) {
                 </tr>
               </thead>
               <tbody>
+                {/* programmatically renders every entry in the table */}
                 {allEntries.map((entry) => {
                   return (
                   <tr key={entry._id}>
@@ -37,6 +45,7 @@ export default function Registry(props) {
                     <td>{entry.msg}</td>
                     <td>
                       {" "}
+                      {/* programmatically uses the Mongo _id of the entry to access the correct document in the database */}
                       <form action={`/scribble/${entry._id}`} method="POST">
                         <button>Scribble this out?</button>
                       </form>
