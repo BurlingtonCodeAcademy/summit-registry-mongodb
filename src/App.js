@@ -1,4 +1,4 @@
-import Peak from "./components/Registry.jsx";
+import Registry from "./components/Registry.jsx";
 import './styles/App.css'
 import poster from './img/findome-tomkillion.jpg'
 
@@ -28,7 +28,7 @@ export default function App() {
     <button onClick = {onClick}>{buttonText}</button>
     </div>
     <div id = "registry">
-      <Peak lookRegister = {lookRegister} />
+      <Registry lookRegister = {lookRegister} />
       </div>
     </>
   );
