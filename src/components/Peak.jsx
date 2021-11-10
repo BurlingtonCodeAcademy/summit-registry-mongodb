@@ -11,7 +11,7 @@ export default function Peak(props) {
       .then((json) => {
         setAllEntries(json);
       });
-  }, [setAllEntries]);
+  }, []);
 
 
   if (props.lookRegister === true) {
