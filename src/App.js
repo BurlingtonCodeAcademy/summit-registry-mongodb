@@ -1,4 +1,7 @@
 import Peak from "./components/Peak.jsx";
+import './styles/App.css'
+
+
 import  { useState } from "react";
 
 export default function App() {

@@ -1,0 +1,20 @@
+
+/* using the universal * selector, we tell our CSS to include padding and borders in its box model calculation as opposed to adding them. this makes the effort of resizing elements more intuitive. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* using the universal * selector, this applies a top margin to elements that follow another element and creates universal vertical rhythm */
+
+* + * {
+    margin-top: 1.5rem;
+  }
+
+  /* Set default on body for*/
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
