@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../styles/App.css'
+import "../styles/App.css";
 
 export default function Peak(props) {
   const [allEntries, setAllEntries] = useState([]);
@@ -14,25 +14,39 @@ export default function Peak(props) {
       });
   }, []);
 
-
   if (props.lookRegister === true) {
-
     return (
       <>
         <div>
           {allEntries.map((entry) => {
-       
             return (
-              <div key = {entry._id}>
-                <h2>{entry.name}</h2>
-                <h2>{entry.date}</h2>
-                <h2>{entry.msg}</h2>
-                <form action={`/scribble/${entry._id}`} method="POST">
-                  <button>Scribble this out?</button>
-                </form>
-                <form action={`/pencil-in/${entry._id}`} method="POST">
-                  <button>Pencil something in?</button>
-                </form>
+              <div id="entries">
+                <table key={entry._id}>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Date</th>
+                      <th>Message</th>
+                      <th>Options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{entry.name}</td>
+                      <td>{entry.date}</td>
+                      <td>{entry.msg}</td>
+                      <td>
+                        {" "}
+                        <form action={`/scribble/${entry._id}`} method="POST">
+                          <button>Scribble this out?</button>
+                        </form>
+                        <form action={`/pencil-in/${entry._id}`} method="POST">
+                          <button>Pencil something in?</button>
+                        </form>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             );
           })}
@@ -50,6 +64,6 @@ export default function Peak(props) {
       </>
     );
   } else {
-      return (null);
+    return null;
   }
 }
