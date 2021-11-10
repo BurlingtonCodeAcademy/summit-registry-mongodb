@@ -65,9 +65,11 @@ h1
 #entries {
   display: inline;
 }
+
+
 table {
-  width: 30vw;
-  display: inline;
+  width: 40vw;
+  display: table;
 }
 
 td,

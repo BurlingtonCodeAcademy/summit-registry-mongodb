@@ -14,7 +14,7 @@ export default function Peak(props) {
       });
   }, []);
 
-  if (props.lookRegister === true) {
+  if (props.lookRegistry === true) {
     return (
       <>
         <div>
