@@ -10,6 +10,8 @@ import dome from "./img/dooome.png";
 //importing hook from React
 import { useState } from "react";
 
+
+//---component function
 export default function App() {
   //controls if the user is "looking" at the registry
   const [lookRegistry, setLookRegistry] = useState(false);
