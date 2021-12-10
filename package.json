@@ -40,7 +40,7 @@
   "bugs": {
     "url": "https://github.com/BurlingtonCodeAcademy/summit-registry-mongodb/issues"
   },
-  "homepage": "https://github.com/BurlingtonCodeAcademy/timers-workshop",
+  "homepage": "https://github.com/BurlingtonCodeAcademy/summit-registry-mongodb",
   "eslintConfig": {
     "extends": [
       "react-app",
