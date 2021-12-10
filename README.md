@@ -1,55 +1,40 @@
-## You will need to run NPM install to have all of the necessary dependencies for this project.
+---
+createdDate: 2021-12-10
+timeRequired: 2 Hour
+topics: workshop, mongodb, mongoose, express
+---
 
-### Run-time: ~1 hour
+### Overview
 
-### `node server.js` and `npm start` in top level of directory in two separate command lines
+In this workshop you will be building a digital [summit registry](https://en.wikipedia.org/wiki/Summit_register) to gain more understanding of CRUD (Create, Read, Update Delete) database functionality with MongoDB. You will also be using Express as a server and React as your front-end framework.
 
-## Purpose
+To complete this workshop, begin in `server.js` and follow the scaffolded instructions in the comments. You will also need to work in `Entry.js` for your Schema.
 
-This workshop is designed to target these pain points specific to the Chat App project:
+This workshop utilizes the localhost MongoDB database.
 
-* Usage of Mongoose Models and Schema.
-* Creating an API route on our server from our database.
-* Manipulating the database via routes on the server.
+### Objective
 
-## Lesson Guide
+The outcome will be a fully functional CRUD web application.
 
+### Topics
 
-### Usage of Mongoose Models and Schema:
+> - MongoDB
+> - Express
+> - React
 
-Within Entry.js, create the Mongoose schema as following:
-```
-name: String,
-date: String,
-msg: String
+### Context
 
-```
+What is "CRUD"?
 
-Within server.js, create the Mongoose model as following:
+It's an acronym that refers to the four basic functions required for a persistence storage application. It is not unique to MongoDB, but refers to a greater mental model that is necessary to implementing persistent data storage.
 
-```
-const Entries = mongoose.model("findome-entries", Entry);
+Create - insert new entries into the database.
+Read - display the database entries on the page.
+Update - change preexisting entries in the database.
+Delete - remove preexisting entries from the database.
 
-```
+Implementing REST with CRUD would have the urls of each action reflective of what is happening.
 
-Things to go over:
+### Additional Resources
 
-* The difference between the Schema and the Model
-* What the two pieces of the Model are
-
-### Creating an API route on our server from our database:
-
-Within server.js, create a GET route that will connect to our collection and send it as as a response in JSON format.
-
-Things to go over:
-
-* All pieces of the collection.find; students at this point have only created API endpoints from within their project directory.
-
-### Manipulating the database via routes on the server:
-
-Within server.js, create several POST routes that handle CREATE, UPDATE, and DELETE functionality.
-
-Things to go over:
-
-* Various methods on the collection depending on the intended action.
-* Why we need the empty `updated` object for our UPDATE functionality to work as imagined.
+[Codecademy's What is CRUD?](https://www.codecademy.com/article/what-is-crud)

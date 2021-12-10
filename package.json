@@ -1,7 +1,8 @@
 {
-  "name": "summit-registry-mongodb",
+  "name": "summit-registry-workshop",
   "version": "0.1.0",
   "private": true,
+  "description": "A workshop focused on building out a CRUD application with MongoDB.",
   "proxy": "http://localhost:5000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
@@ -20,8 +21,26 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write --ignore-unknown .",
+    "lint": "eslint .",
+    "cleanup": "npm run format && npm run lint",
+    "prepare": "husky install"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BurlingtonCodeAcademy/summit-registry-mongodb"
+  },
+  "keywords": [
+    "DOM",
+    "javascript"
+  ],
+  "author": "Julie Assur",
+  "license": "LicenseRef-LICENSE",
+  "bugs": {
+    "url": "https://github.com/BurlingtonCodeAcademy/summit-registry-mongodb/issues"
+  },
+  "homepage": "https://github.com/BurlingtonCodeAcademy/timers-workshop",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -39,5 +58,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.2"
   }
 }
