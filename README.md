@@ -28,10 +28,10 @@ What is "CRUD"?
 
 It's an acronym that refers to the four basic functions required for a persistence storage application. It is not unique to MongoDB, but refers to a greater mental model that is necessary to implementing persistent data storage.
 
-Create - insert new entries into the database.
-Read - display the database entries on the page.
-Update - change preexisting entries in the database.
-Delete - remove preexisting entries from the database.
+* Create - insert new entries into the database.
+* Read - display the database entries on the page.
+* Update - change preexisting entries in the database.
+* Delete - remove preexisting entries from the database.
 
 Implementing REST with CRUD would have the urls of each action reflective of what is happening.
 
