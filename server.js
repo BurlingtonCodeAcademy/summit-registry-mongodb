@@ -9,7 +9,7 @@ const express = require("express");
 const cors = require("cors");
 
 //importing entry schema
-const Entry = require("./Entry");
+const EntrySchema = require("./Entry");
 
 //creating the initial connection to the database
 mongoose.connect("mongodb://localhost:27017/summitregistry", {
