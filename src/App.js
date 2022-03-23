@@ -14,18 +14,18 @@ import { useState } from "react";
 //---component function
 export default function App() {
   //controls if the user is "looking" at the registry
-  const [lookRegistry, setLookRegistry] = useState(false);
-  const [buttonText, setButtonText] = useState("Open the summit registry.");
+  const [lookRegistry, setLookRegistry] = useState(true);
+  const [buttonText, setButtonText] = useState("Close the summit registry.");
 
 
 //handles the rendering of the Registry component dependant on click
   const onClick = () => {
-    if (lookRegistry === false) {
-      setLookRegistry(true);
-      setButtonText("Close the summit registry.");
-    } else {
+    if (lookRegistry === true) {
       setLookRegistry(false);
       setButtonText("Open the summit registry.");
+    } else {
+      setLookRegistry(true);
+      setButtonText("Close the summit registry.");
     }
   };
   return (
