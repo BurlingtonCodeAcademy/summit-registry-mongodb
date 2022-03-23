@@ -12,7 +12,7 @@ const cors = require("cors");
 const Entry = require("./Entry");
 
 //creating the initial connection to the database
-mongoose.connect("mongodb://localhost:27017/test", {
+mongoose.connect("mongodb://localhost:27017/summitregistry", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
