@@ -46,7 +46,7 @@ export default function Registry(props) {
                     <td>
                       {" "}
                       {/* programmatically uses the Mongo _id of the entry to access the correct document in the database */}
-                      <form action={`/scribble/${entry._id}`} method="POST">
+                      <form action={`/delete/${entry._id}`} method="POST">
                         <button>Scribble this out?</button>
                       </form>
                     </td>
@@ -56,7 +56,7 @@ export default function Registry(props) {
               <tfoot>
                 <tr>
                   <td colspan="4">
-                    <form action="/write" method="POST">
+                    <form action="/create" method="POST">
                       <input
                         type="text"
                         name="name"

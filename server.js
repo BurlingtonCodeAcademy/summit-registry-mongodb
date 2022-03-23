@@ -36,7 +36,7 @@ app.use(express.static("./build"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-//creating the Entries model utilizing the Entry schema and the "findome-entries" collection
+//creating the Entry model utilizing the Entry schema and the "entries" collection
 
 
 //creating our API route for the front end to access the entries from the database
@@ -48,7 +48,7 @@ app.get("/allentries", async (req, res) => {
 });
 
 //CREATE functionality for inserting a new entry into our collection
-app.post("/write", async (req, res) => {
+app.post("/create", async (req, res) => {
   //assigning the creation of a new entry to a variable
 
 
@@ -59,11 +59,11 @@ app.post("/write", async (req, res) => {
 });
 
 //DELETE functionality for removing an entry based on the id received in params
-app.post("/scribble/:entryId", async (req, res) => {
+app.post("/delete/:entryId", async (req, res) => {
   //grabbing the document id received in params
 
 
-  //using the retrieved document id to delete a matching document in our Entries model
+  //using the retrieved document id to delete a matching document in our Entry model
 
 
   //redirecting to the home page
