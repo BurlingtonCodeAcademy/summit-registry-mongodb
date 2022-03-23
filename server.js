@@ -12,7 +12,7 @@ const cors = require("cors");
 const Entry = require("./Entry");
 
 //creating the initial connection to the database
-mongoose.connect("mongodb://localhost:27017/test", {
+mongoose.connect("mongodb://localhost:27017/summitregistry", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -36,21 +36,21 @@ app.use(express.static("./build"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-//creating the Entries model utilizing the Entry schema and the "findome-entries" collection
-const Entries = mongoose.model("findome-entries", Entry);
+//creating the Entry model utilizing the Entry schema and the "entries" collection
+const Entry = mongoose.model("entries", Entry);
 
 //creating our API route for the front end to access the entries from the database
 app.get("/allentries", async (req, res) => {
   //assigning the result of a find on our Model to a variable
-  let allEntries = await Entries.find({});
+  let allEntries = await Entry.find({});
   //sending the result as a json to the page
   res.json(allEntries);
 });
 
 //CREATE functionality for inserting a new entry into our collection
-app.post("/write", async (req, res) => {
+app.post("/create", async (req, res) => {
   //assigning the creation of a new entry to a variable
-  const newEntry = new Entries({
+  const newEntry = new Entry({
     name: req.body.name,
     date: req.body.date,
     msg: req.body.msg,
@@ -63,12 +63,12 @@ app.post("/write", async (req, res) => {
 });
 
 //DELETE functionality for removing an entry based on the id received in params
-app.post("/scribble/:entryId", async (req, res) => {
+app.post("/delete/:entryId", async (req, res) => {
   //grabbing the document id received in params
   let entryId = req.params.entryId;
 
-  //using the retrieved document id to delete a matching document in our Entries model
-  await Entries.deleteOne({ _id: entryId });
+  //using the retrieved document id to delete a matching document in our Entry model
+  await Entry.deleteOne({ _id: entryId });
 
   //redirecting to the home page
   res.redirect("/")
