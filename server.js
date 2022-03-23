@@ -74,54 +74,6 @@ app.post("/scribble/:entryId", async (req, res) => {
   res.redirect("/")
 });
 
-//UPDATE functionality for editing an entry based on the id received in params
-
-//first send user to a new page for editing the selected entry
-app.post("/pencil-in/:entryId" , async (req, res) => {
-  //grabbing the document id received in params
-  let entryId = req.params.entryId;
-  //sending the user to a new page
-  res.send(`<div><h2>What are you writing over?</h2>
-  <form method = "POST" action="/pencil-in/${entryId}/update">
-        <input type = "text" name="name" placeholder = "name"/>
-        <input type = "text" name="date" placeholder = "date"/>
-        <input type = "text" name="msg" placeholder = "message"/>
-        <input type="submit" />
-        </form>
-        </div>`);
-});
-
-//then send over the edits, conditionally checking for fields being updated to prevent fields from being saved as blank
-app.post("/pencil-in/:entryId/update", async (req, res) => {
-  //grabbing the document id received in params
-  let entryId = req.params.entryId;
-
-  //creating empty object to hold any updated values
-  let updated = {}
-
-  //series of if statements checking if values were received in the body of the request; assigning them to our updated object if they do exist
-  if (req.body.name) {
-      updated.name = req.body.name
-  }
-
-  if (req.body.date) {
-      updated.date = req.body.date
-  }
-
-  if (req.body.msg) {
-      updated.msg = req.body.msg
-  }
-
-  //finding a document by its ID and then updating its key:value pairs dependant on whether or not they exist in the updated object
-
-  await Entries.findByIdAndUpdate(
-    { _id: entryId },
-    { $set: { name: updated.name, date: updated.date, msg: updated.msg } }
-  );
-  //redirecting to the home page
-  res.redirect("/")
-});
-
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
 });

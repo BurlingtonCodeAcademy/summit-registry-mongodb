@@ -49,9 +49,6 @@ export default function Registry(props) {
                       <form action={`/scribble/${entry._id}`} method="POST">
                         <button>Scribble this out?</button>
                       </form>
-                      <form action={`/pencil-in/${entry._id}`} method="POST">
-                        <button>Pencil something in?</button>
-                      </form>
                     </td>
                   </tr>
                 )})}
