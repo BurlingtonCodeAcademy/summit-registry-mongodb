@@ -70,31 +70,6 @@ app.post("/scribble/:entryId", async (req, res) => {
 
 });
 
-//UPDATE functionality for editing an entry based on the id received in params
-
-//first send user to a new page for editing the selected entry
-app.post("/pencil-in/:entryId", async (req, res) => {
-  //grabbing the document id received in params
-
-  //sending the user to a new page
-
-});
-
-//then send over the edits, conditionally checking for fields being updated to prevent fields from being saved as blank
-app.post("/pencil-in/:entryId/update", async (req, res) => {
-  //grabbing the document id received in params
-
-
-  //creating empty object to hold any updated values
-
-
-  //series of if statements checking if values were received in the body of the request; assigning them to our updated object if they do exist
-
-  //finding a document by its ID and then updating its key:value pairs dependant on whether or not they exist in the updated object
-
-  //redirecting to the home page
-
-});
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
