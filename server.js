@@ -9,7 +9,7 @@ const express = require("express");
 const cors = require("cors");
 
 //importing entry schema
-const Entry = require("./Entry");
+const EntrySchema = require("./Entry");
 
 //creating the initial connection to the database
 mongoose.connect("mongodb://localhost:27017/summitregistry", {
@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //creating the Entry model utilizing the Entry schema and the "entries" collection
-const Entry = mongoose.model("entries", Entry);
+const Entry = mongoose.model("entries", EntrySchema);
 
 //creating our API route for the front end to access the entries from the database
 app.get("/allentries", async (req, res) => {
