@@ -32,7 +32,6 @@ const app = express();
 db.on("error", console.error.bind(console, "connection error"));
 
 //middleware functions
-app.use(express.static("./build"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
